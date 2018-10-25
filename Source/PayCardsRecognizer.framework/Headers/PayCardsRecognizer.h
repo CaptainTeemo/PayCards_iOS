@@ -46,6 +46,7 @@ typedef NS_OPTIONS(NSUInteger, PayCardsRecognizerDataMode) {
 - (instancetype _Nonnull)initWithDelegate:(id<PayCardsRecognizerPlatformDelegate> _Nonnull)delegate recognizerMode:(PayCardsRecognizerDataMode)recognizerMode resultMode:(PayCardsRecognizerResultMode)resultMode container:(UIView * _Nonnull)container frameColor:(UIColor * _Nonnull)frameColor;
 
 @property (nonatomic, weak, nullable) id<PayCardsRecognizerPlatformDelegate> delegate;
+@property (nonatomic, assign) BOOL autoTorchEnabled;
 
 - (void)startCamera;
 
@@ -66,5 +67,4 @@ typedef NS_OPTIONS(NSUInteger, PayCardsRecognizerDataMode) {
 @protocol PayCardsRecognizerPlatformDelegate
 
 - (void)payCardsRecognizer:(PayCardsRecognizer * _Nonnull)payCardsRecognizer didRecognize:(PayCardsRecognizerResult * _Nonnull)result;
-
 @end
